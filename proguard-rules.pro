@@ -1,0 +1,2 @@
+-keep class com.auratune.player.** { *; }
+-dontwarn org.mozilla.javascript.**
