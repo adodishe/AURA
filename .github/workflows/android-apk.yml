@@ -19,8 +19,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build Debug APK with System Gradle
-      run: gradle assembleDebug --no-daemon
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+
+    - name: Build Debug APK
+      run: gradle wrapper && ./gradlew assembleDebug --no-daemon
 
     - name: Upload Ready APK
       uses: actions/upload-artifact@v4
